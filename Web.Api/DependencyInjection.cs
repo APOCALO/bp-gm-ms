@@ -130,7 +130,8 @@ namespace Web.Api
 
             // Repositorios
             services.AddScoped(typeof(IBaseRepository<,>), typeof(BaseRepository<,>));
-            services.AddScoped<ICompanyRepository, CompanyRepository>();
+            services.AddScoped<IGuildRepository, GuildRepository>();
+            services.AddScoped<IPlayerRepository, PlayerRepository>();
 
             return services;
         }
@@ -192,3 +193,5 @@ namespace Web.Api
         }
     }
 }
+
+

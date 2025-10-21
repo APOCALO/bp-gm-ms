@@ -4,14 +4,17 @@ using Framework.Infrastructure.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure; // <-- GetService<T>()
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
-using Web.Api.Domain.Companies;
+using Web.Api.Domain.Guild;
+using Web.Api.Domain.Player;
 
 namespace Web.Api.Infrastructure.Data
 {
     public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWork
     {
-        public DbSet<Company> Companies { get; set; } = default!;
+        public DbSet<Guild> Guilds { get; set; } = default!;
+        public DbSet<Player> Players { get; set; } = default!;
 
         // ÚNICO ctor público, solo con opciones (requerido por AddDbContextPool)
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
@@ -87,3 +90,6 @@ namespace Web.Api.Infrastructure.Data
         }
     }
 }
+
+
+
