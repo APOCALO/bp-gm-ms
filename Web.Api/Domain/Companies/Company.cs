@@ -1,5 +1,6 @@
 using Framework.Domain.Primitives;
 using Framework.Domain.ValueObjects;
+using Web.Api.Domain.Common;
 
 namespace Web.Api.Domain.Companies
 {

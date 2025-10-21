@@ -1,5 +1,5 @@
 ﻿using Framework.Domain.ValueObjects;
-using Web.Api.Domain.Companies;
+using Web.Api.Domain.Common;
 
 namespace Web.Api.Application.Companies.DTOs
 {

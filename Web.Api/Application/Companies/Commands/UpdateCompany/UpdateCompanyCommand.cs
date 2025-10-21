@@ -1,6 +1,6 @@
 ﻿using Framework.Application.Common;
 using Web.Api.Application.Companies.DTOs;
-using Web.Api.Domain.Companies;
+using Web.Api.Domain.Common;
 
 namespace Web.Api.Application.Companies.Commands.UpdateCompany
 {
