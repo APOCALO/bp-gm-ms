@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  api:
+    container_name: Turho-ms-core
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ConnectionStrings__DatabaseConnection=Host=postgres-db;Port=5432;Database=Turho-ms-core;Username=myuser;Password=mypassword;
+    networks:
+      - my-network  # Red compartida
+
+networks:
+  my-network:
+    external: true  # Usa la red externa creada por el contenedor de PostgreSQL
