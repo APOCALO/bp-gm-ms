@@ -10,20 +10,22 @@ namespace Web.Api.Domain.Player
         public string Position { get; private set; }
         public BpClassSpec ClassSpec { get; private set; }
         public Guid? GuildId { get; private set; }
+        public Guid UserId { get; set; }
 
         private Player() { }
 
         private Player(
             Guid? id,
-            Guid createdById,
+            Guid userId,
             string name,
             int level,
             int gearScore,
             string position,
             BpClassSpec classSpec,
             Guid? guildId)
-            : base(createdById, id)
+            : base(userId, id)
         {
+            UserId = userId;
             Name = ValidateName(name);
             Level = ValidateNonNegative(level, nameof(level));
             GearScore = ValidateNonNegative(gearScore, nameof(gearScore));
@@ -33,7 +35,7 @@ namespace Web.Api.Domain.Player
         }
 
         public static Player Create(
-            Guid createdById,
+            Guid userId,
             string name,
             int level,
             int gearScore,
@@ -41,7 +43,7 @@ namespace Web.Api.Domain.Player
             BpClassSpec classSpec,
             Guid? guildId = null,
             Guid? id = null)
-            => new Player(id, createdById, name, level, gearScore, position, classSpec, guildId);
+            => new Player(id, userId, name, level, gearScore, position, classSpec, guildId);
 
         #region Domain Methods
         public void UpdateName(string name) => Name = ValidateName(name);

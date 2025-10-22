@@ -12,7 +12,7 @@ using Web.Api.Infrastructure.Data;
 namespace Web.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251021235405_Initial_migration")]
+    [Migration("20251022005727_Initial_migration")]
     partial class Initial_migration
     {
         /// <inheritdoc />
@@ -118,6 +118,9 @@ namespace Web.Api.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<Guid?>("UpdatedById")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");

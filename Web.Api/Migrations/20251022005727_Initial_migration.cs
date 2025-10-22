@@ -22,6 +22,7 @@ namespace Web.Api.Migrations
                     Position = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ClassSpec = table.Column<int>(type: "int", nullable: false),
                     GuildId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedById = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: true),

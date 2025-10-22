@@ -24,7 +24,7 @@ namespace Web.Api.Application.Players.Commands.CreatePlayer
         protected override async Task<ErrorOr<ApiResponse<PlayerResponseDTO>>> HandleRequest(CreatePlayerCommand request, CancellationToken cancellationToken)
         {
             var player = PlayerAgg.Create(
-                createdById: request.CreatedById,
+                userId: request.CreatedById,
                 name: request.Name,
                 level: request.Level,
                 gearScore: request.GearScore,
